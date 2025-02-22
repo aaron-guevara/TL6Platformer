@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HeroKnight_0: -7357797988063737743
+      HeroKnight_1: 3512593026476662326
+      HeroKnight_2: -124786382948628084
+      HeroKnight_3: 7970523947391987758
+      HeroKnight_4: -7787729717272468553
+      HeroKnight_5: 2125910826022465951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
