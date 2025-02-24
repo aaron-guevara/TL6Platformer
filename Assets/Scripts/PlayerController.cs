@@ -39,6 +39,12 @@ public class PlayerController : MonoBehaviour
     public CanvasGroup gameOverCanvas;
 
 
+    //coin manager 
+    //public coinManager cm; 
+
+    //Collectible audio 
+    public AudioSource audioCoin; //audio for coin collision 
+    public AudioSource audioPotion;  //audio for potion collision 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -155,5 +161,18 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+//interacting with coins and potions
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.CompareTag("coin")){ //checking if tagged "coin" 
+            Destroy(other.gameObject); //making sure coin diappears when collided 
+            audioCoin.Play(); //sound effects 
+        }
+        if(other.gameObject.CompareTag("Health")){ //checking if tagged "coin" 
+            Destroy(other.gameObject); //making sure coin diappears when collided 
+            healthAmount+=5; // increasing health bc healing potion 
+            audioPotion.Play(); //play sound effect 
+        }
     }
 }
