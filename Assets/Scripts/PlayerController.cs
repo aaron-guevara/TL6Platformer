@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     //gameover
     public CanvasGroup gameOverCanvas;
+    public Text WinText;
 
 
     //coin manager 
@@ -175,4 +176,5 @@ public class PlayerController : MonoBehaviour
             audioPotion.Play(); //play sound effect 
         }
     }
+
 }
