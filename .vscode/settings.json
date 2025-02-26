@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TL2 presentation.sln"
+    "dotnet.defaultSolution": "TL6Platformer.sln"
 }
