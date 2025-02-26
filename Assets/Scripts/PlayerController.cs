@@ -58,7 +58,8 @@ public class PlayerController : MonoBehaviour
         }
 
         _startingPosition = transform.position;
-
+        jumpsound = GetComponent<AudioSource>();
+        hurtSound = GetComponent<AudioSource>();
     
     }
 

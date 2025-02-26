@@ -14700,6 +14700,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2227106232379959411, guid: f2ef9ab374e6f1d45adcd1d790994ed4, type: 3}
+      propertyPath: m_Volume
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 4639461321535898089, guid: f2ef9ab374e6f1d45adcd1d790994ed4, type: 3}
       propertyPath: m_Name
       value: SFX Handler
