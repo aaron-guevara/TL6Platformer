@@ -46,8 +46,6 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioCoin; //audio for coin collision 
     public AudioSource audioPotion;  //audio for potion collision 
 
-    public AudioSource jumpsound; // audio for jump
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,8 +56,6 @@ public class PlayerController : MonoBehaviour
         }
 
         _startingPosition = transform.position;
-        jumpsound = GetComponent<AudioSource>();
-        hurtSound = GetComponent<AudioSource>();
     
     }
 
@@ -67,7 +63,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jumpsound = GetComponent<AudioSource>();
         updateBCMode();
         GetPlayerMovement();
         GroundCheck();
@@ -108,7 +103,6 @@ public class PlayerController : MonoBehaviour
         {
             _rb.linearVelocityY = _jumpForce;
             _isGrounded = false;
-            jumpsound.Play();
         }
     }
 
