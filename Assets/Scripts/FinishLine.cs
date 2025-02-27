@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(collison.tag == "Player")
+        if(other.tag == "Player")
         {
-            SceneManager.LoadScene(WinningScreen)
+            SceneManager.LoadScene("WinningScene");
         }
     }
 
