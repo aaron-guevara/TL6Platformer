@@ -7,7 +7,6 @@ TagManager:
   - Stomp
   - coin
   - Health
-  - WinCondition
   layers:
   - Default
   - TransparentFX

@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 6fede028ba58b48d08e05b2bff883359
+guid: dd61c66136b909a46bdf4a1d01722eab
 AudioImporter:
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   defaultSettings:
     serializedVersion: 2
     loadType: 0
@@ -21,11 +21,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 290553
-  packageName: Collectables Sound Effects Pack
-  packageVersion: 1.0
-  assetPath: Assets/Collectables/Collectables Sound Pack/Collectables Sound Effects
-    Pack/Collectables/Collectable_06.wav
-  uploadId: 684830
