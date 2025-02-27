@@ -133,7 +133,14 @@ public class PlayerController : MonoBehaviour
         if(!bc){
         GetComponent<SpriteRenderer>().color = Color.red;
         takeDamage(damage);
+        StartCoroutine(FlashRed());
+        }
     }
+
+    private System.Collections.IEnumerator FlashRed()
+    {
+        yield return new WaitForSeconds(0.3f);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public void takeDamage(float damage)
