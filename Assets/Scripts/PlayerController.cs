@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioPotion;  //audio for potion collision 
 
     public AudioSource jumpsound; // audio for jump
+    public AudioSource hurtSound; // audio for hurt
+    public AudioSource DeathSound; // Sound for dying
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,8 +60,18 @@ public class PlayerController : MonoBehaviour
         }
 
         _startingPosition = transform.position;
-        jumpsound = GetComponent<AudioSource>();
-        hurtSound = GetComponent<AudioSource>();
+      
+      AudioSource[] audioSources = GetComponents<AudioSource>();
+    if (audioSources.Length >= 2)
+    {
+        jumpsound = audioSources[0]; // Assign first AudioSource for jump sound
+        hurtSound = audioSources[1]; // Assign second AudioSource for hurt sound
+        DeathSound = audioSources[2]; // Assign third AudioSource for death sound
+    }
+    else
+    {
+        Debug.LogError("Not enough AudioSource components attached to the Player!");
+    }
     
     }
 
@@ -77,6 +89,7 @@ public class PlayerController : MonoBehaviour
         if (healthAmount <= 0 || transform.position.y < _fallThreshold) 
         {
             //ResetToStart();
+            DeathSound.PlayOneShot(DeathSound.clip);
             GameOver();
         }
 
@@ -134,6 +147,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.red;
         takeDamage(damage);
         StartCoroutine(FlashRed());
+        hurtSound.Play();
         }
     }
 
@@ -158,10 +172,17 @@ public class PlayerController : MonoBehaviour
     {
         bc = PlayerPrefs.GetInt("BCMode", 0) == 1;
     }
-    public void GameOver()
-    {
-        SceneManager.LoadScene(2);
-    }
+   
+   public void GameOver()
+{
+    DeathSound.Play();
+    SceneManager.LoadScene(2);
+}
+
+void ReloadScene()
+{
+    SceneManager.LoadScene(2);
+}
     
     public void ResetToStart()
     {
